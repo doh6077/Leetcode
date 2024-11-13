@@ -1,9 +1,14 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        preMap = {}
-        for i, n in enumerate(nums):
-            diff = target - n 
-            if diff in preMap:
-                return [preMap[diff], i]
-            preMap[n] = i  
+        dicts = {}
+        for index, item in enumerate(nums):
+            dicts[item] = index
+        
+        for i in dicts:
+            diff = target - i 
+            if diff in dicts and dicts[i] != dicts[diff]:
+                return [dicts[i], dicts[diff] ]
+
+
+ 
         
