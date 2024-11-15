@@ -1,19 +1,15 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        dicts1 = {} 
-        dicts2 = {} 
+        if len(s) != len(t):
+            return False 
+        dicts1, dicts2 ={}, {}
         for i in range(len(s)):
-            if s[i] not in dicts1:
-                dicts1[s[i]] = 1 
-            else:
-                dicts1[s[i]] += 1 
-             
-        for i in range(len(t)):
-            if t[i] not in dicts2:
-                dicts2[t[i]] = 1 
-            else:
-                dicts2[t[i]] += 1   
-        return dicts1 == dicts2
+            dicts1[s[i]] = 1 + dicts1.get(s[i],0) # if the key doens't exist, it returns zero 
+            dicts2[t[i]] = 1 + dicts2.get(t[i],0) # if the key doens't exist, it returns zero             
+        for c in dicts1:
+            if dicts1[c] != dicts2.get(c,0):
+                return False 
+        return True 
           
 
 
