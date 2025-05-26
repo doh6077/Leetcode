@@ -26,10 +26,16 @@
 </ul>
 
 
-<li>
-	<ol> Find a leaf : A leaf is a node with no children</ol>
-	<ol>if either the left or right leaf exists</ol>
-		<ul> it performs dfs recursively with the left/right leaf set as the root</ul>
-	<ol> if none of the left or right leaf exists</ol>
-		<ul> appends the path to the answer array</ul>
-</li>
+<ol>
+  <li>Find a leaf: A leaf is a node with no children.</li>
+  <li>If either the left or right child exists:
+    <ul>
+      <li>Perform DFS recursively with the child as the new root.</li>
+    </ul>
+  </li>
+  <li>If neither left nor right child exists:
+    <ul>
+      <li>Append the path to the answer array.</li>
+    </ul>
+  </li>
+</ol>
