@@ -24,3 +24,12 @@
 	<li>The number of nodes in the tree is in the range <code>[1, 100]</code>.</li>
 	<li><code>-100 &lt;= Node.val &lt;= 100</code></li>
 </ul>
+
+
+<li>
+	<ol> Find a leaf : A leaf is a node with no children</ol>
+	<ol>if either the left or right leaf exists</ol>
+		<ul> it performs dfs recursively with the left/right leaf set as the root</ul>
+	<ol> if none of the left or right leaf exists</ol>
+		<ul> appends the path to the answer array</ul>
+</li>
