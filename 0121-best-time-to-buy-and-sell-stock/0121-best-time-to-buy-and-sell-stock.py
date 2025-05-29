@@ -3,8 +3,8 @@ class Solution:
         l, r = 0, 1 
 
         maxProfit = 0 
-        while l < len(prices):
-            if prices[r] < prices[l]:
+        while r < len(prices):
+            if prices[l] < prices[r]:
                 profit = prices[r] - prices[l]
                 if maxProfit < profit:
                     maxProfit = profit
