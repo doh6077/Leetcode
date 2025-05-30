@@ -30,3 +30,25 @@
 	<li><code>2 &lt;= n &lt;= 10<sup>5</sup></code></li>
 	<li><code>0 &lt;= height[i] &lt;= 10<sup>4</sup></code></li>
 </ul>
+
+
+
+******
+
+## First Try – 2025-05-30
+
+- I need to check two things:
+  - **Width** – the difference between two indexes
+  - **Height** – the smaller of the two elements (not their difference)
+  
+- Use **two pointers**:
+  - `r` refers to the right pointer
+  - `l` refers to the left pointer
+  - `r` should always be greater than `l` (start from both ends)
+  - We're trying to find the **maximum area**, which depends on the **shorter height**
+  - If the height at `r` is greater than the height at `l`:
+    - Move `l` one step to the right (to possibly find a taller line)
+  - Else:
+    - Move `r` one step to the left
+
+- Current approach is not optimized — need to find a more efficient solution
