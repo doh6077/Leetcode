@@ -1,14 +1,16 @@
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        dicts = {}
-        for index, item in enumerate(nums):
-            dicts[item] = index
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
+        result = []
+        for l in range(0, len(nums) - 1):
+            for r in range(l+1,len(nums)):
+                if nums[l] + nums[r] == target:
+                    result.extend([l,r])
+            
+
         
-        for i in dicts:
-            diff = target - i 
-            if diff in dicts and dicts[i] != dicts[diff]:
-                return [dicts[i], dicts[diff] ]
+        return result
 
 
- 
-        
+
+
+
