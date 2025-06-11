@@ -6,14 +6,9 @@ class Solution:
         count = {}
         for i, v in enumerate(nums):
             if v in count: 
-                count[v] += 1 
+                return True
             else:
                 count[v] = 1 
-        for i in count.values():
-            
-            if i > 1:
-                return True
-        
         return False
             
 
