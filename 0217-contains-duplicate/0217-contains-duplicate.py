@@ -1,5 +1,5 @@
 class Solution:
-    def containsDuplicate(self, nums: List[int]) -> bool:
+    def containsDuplicate(self, nums: list[int]) -> bool:
         # Hash map 
         # track how many items {valude: times}
         # Time Complexity 
@@ -9,13 +9,12 @@ class Solution:
                 count[v] += 1 
             else:
                 count[v] = 1 
-        
         for i in count.values():
+            
             if i > 1:
                 return True
-            else:
-                return False 
-            
+        
+        return False
             
 
         
