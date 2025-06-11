@@ -1,15 +1,14 @@
 class Solution:
     def containsDuplicate(self, nums: list[int]) -> bool:
-        # Hash map 
-        # track how many items {valude: times}
-        # Time Complexity 
-        count = {}
-        for i, v in enumerate(nums):
-            if v in count: 
+        hashset = set()
+
+        for i in nums:
+            if i in hashset:
                 return True
             else:
-                count[v] = 1 
+                hashset.add(i)
         return False
+        
             
 
         
