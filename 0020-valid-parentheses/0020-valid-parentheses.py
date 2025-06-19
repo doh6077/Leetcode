@@ -1,17 +1,17 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        stack = []
-        closeToOpen = {")":"(", "]":"[", "}":"{"}
+        tokens = {'(':')','[':']','{':'}'}
+        stack = [] 
 
-        for c in s:
-            if c in closeToOpen:
-                if stack and stack[-1] == closeToOpen[c]:
-                    stack.pop()
-                else:
-                    return False
+        def isMatch(openTerm, closeTerm):
+            return tokens[openTerm] == closeTerm 
+        
+        for i in s:
+            if i in tokens:
+                print(i)
+                stack.append(i)
             else:
-                stack.append(c)
+                if len(stack) == 0 or not isMatch(stack.pop(), i):
+                    return False 
         
-        return True if not stack else False 
-	
-        
+        return not stack 
