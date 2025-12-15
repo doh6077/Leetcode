@@ -1,17 +1,22 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        tokens = {'(':')','[':']','{':'}'}
-        stack = [] 
+        match = {")": "(", "}": "{", "]": "["}
+        stack = []
 
-        def isMatch(openTerm, closeTerm):
-            return tokens[openTerm] == closeTerm 
-        
-        for i in s:
-            if i in tokens:
-                print(i)
-                stack.append(i)
-            else:
-                if len(stack) == 0 or not isMatch(stack.pop(), i):
+        for ch in s:
+            if ch in match:
+                if stack and stack[-1] == match[ch]:
+                    stack.pop()
+                else:
                     return False 
+            else:
+                stack.append(ch)
+        return True if not stack else False
+
+
         
-        return not stack 
+
+
+
+
+        
