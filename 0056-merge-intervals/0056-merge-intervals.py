@@ -7,7 +7,6 @@ class Solution:
         n = len(intervals)
         while left < right and right < n:
             if intervals[left][1] >= intervals[right][0] and intervals[left][1] >= intervals[right][1]:
-                intervals[left] = [intervals[left][0], intervals[left][1]]
                 del intervals[right]
                 n = len(intervals)
             elif intervals[left][1] >= intervals[right][0] and intervals[left][1] < intervals[right][1]:
