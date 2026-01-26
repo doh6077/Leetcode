@@ -6,14 +6,18 @@
 #         self.right = right
 class Solution:
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
-        def checkNode(p,q):
-            if not p and not q:
+        # DFS 
+
+        def dfs(node1, node2):
+            if node1 is None and node2 is None:
                 return True
-            if not p or not q:
+            if node1 is None or node2 is None:
                 return False 
-            if p.val != q.val:
+            if node1.val != node2.val:
                 return False 
-            return checkNode(p.left,q.left) and checkNode(p.right,q.right) 
-        return checkNode(p,q)   
+            print(node1.val, node2.val)
+            return dfs(node1.left,node2.left) and dfs(node1.right,node2.right)
+
+        return dfs(p, q) 
 
         
